@@ -27,10 +27,15 @@ The movie recommendation system provides users with personalized movie recommend
 
 ## System Architecture
 The system architecture consists of the following components:
-- **Backend Server**: Developed using Flask, the backend server handles API requests from the mobile app and interacts with the recommendation system.
-- **Recommendation System**: Utilizes NLP techniques and machine learning models to generate movie recommendations.
-- **IMDb API Integration**: Fetches detailed information about movies from the IMDb API.
-- **Mobile App**: Developed using Flutter, the mobile app provides a user-friendly interface for accessing movie recommendations.
+- **Mobile App**: Developed using Flutter, the mobile app serves as the user's gateway to the movie recommendation system. Users can easily browse through a vast collection of movies and select or search for any one of them. When a user chooses a movie, its unique identifier (ID) is sent to the backend server via an API request.
+  
+- **Recommendation System**: Leveraging NLP techniques and machine learning models, the recommendation system processes the incoming movie ID to generate a list of 7 similar movies, based on attributes of the selected movie such as its genre, description, cast, and crew.
+- 
+- **Backend Server**: Developed using Flask. When the mobile app sends the movie ID, the backend server transmits the movie ID to the recommendation system, which then processes the request and generates a curated list of similar movies. Subsequently, the backend server retrieves this list of similar movies from the recommendation system and sends movies data back to the mobile app. This bidirectional communication ensures a smooth and efficient flow of data between the various components of the system.
+- 
+- **IMDb API Integration**: To enrich the recommended movies with additional information, such as poster images, plot summaries, cast details, and release dates, the system integrates with the IMDb API. Once the recommendation system provides a list of similar movies, the backend server calls the IMDb API to fetch the relevant details for each movie. This information is then bundled into a JSON format and sent back to the mobile app for display.
+- The entire process, from the user clicking on a movie within the app, generating and then displaying similar movies on the screen, occurs in less than a second due to optimised and efficient integration between the frontend and the backend
+
 
 ## Recommendation System
 The recommendation system employs NLP techniques and machine learning models to generate movie recommendations. It preprocesses movie descriptions and metadata using techniques such as tokenization, stemming, and vectorization. Cosine similarity is then used to measure the similarity between movies, and the system recommends movies with the highest similarity scores to the user.
