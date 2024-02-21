@@ -3,6 +3,15 @@
 ## Description
 This project focuses on building a robust movie recommendation system for a mobile app. The system suggests movies similar to the user's input movie using various NLP and machine learning techniques. A flask backend is used to facilitate communication between the model and the front end using REST APIs. Similar movies along with their posters, release dates, names, cast etc can be displayed on the screen in a second from user selection
 
+## Table of Contents
+
+1. [Movie Recommendation System](#movie-recommendation-system)
+2. [Technologies Used](#technologies-used)
+3. [System Architecture](#system-architecture)
+4. [Recommendation System](#recommendation-system)
+5. [Integration with Mobile App](#integration-with-mobile-app)
+6. [Contributors](#contributors)
+
 
 ## Technologies Used
 - Python
